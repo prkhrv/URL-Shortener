@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static "css/mycss.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Charmonman" rel="stylesheet">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title></title>
+  </head>
+  <body>
+    <center>
+    <h1>Login</h1>
+    <div class="error">
+		{% if form.errors %}
+	          {{ form.non_field_errors }}
+	  {% endif %}
+
+  </div>
+    <form method="post" id="form1">
+      {% csrf_token %}
+      <p><label for="id_username">Username:</label> <input class="inp" type="text" name="username" autofocus required="" id="id_username" placeholder="Username"></p>
+      <p><label for="id_password">Password:</label> <input class="inp" type="password" name="password" required="" id="id_password" placeholder="Password"></p><br>
+      <button class="btn" onclick="submit">LOGIN</button>
+
+    </form>
+
+    <br>
+<p><strong>-- OR --</strong></p>
+
+
+   </center>
+
+
+  </body>
+
+
+
+</html>
