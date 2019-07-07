@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    {% if user.is_authenticated %}
+
+    <h1>Hello</h1>
+
+    {{abc}}
+    <form method="post">
+      {% csrf_token %}
+
+      {{form.as_p}}
+
+      <input type="submit" name="" value="shorturl">
+
+    </form>
+
+      <a href="{{a}}"><h1>{{a}}</h1></a>
+
+      {% else %}
+        <h1>Please LOGIN</h1>
+      {% endif %}
+
+  </body>
+</html>
