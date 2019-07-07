@@ -13,7 +13,7 @@ def make(request,token):
 
 @login_required
 def home(request):
-    abc = short_urls.objects.filter(user = request.user)
+    abc = short_urls.objects.filter(user = request.user).values()
     form = UrlForm(request.POST)
     a = ""
     myUrl = ""

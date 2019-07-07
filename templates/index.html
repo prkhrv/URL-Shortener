@@ -8,9 +8,14 @@
 
     {% if user.is_authenticated %}
 
-    <h1>Hello</h1>
 
-    {{abc}}
+
+    <h1>Hello {{user.username}}</h1>
+
+    {% for a in abc %}
+
+    <p><strong>{{a.long_url}}</strong> {{a.short_url}} </p>
+    {% endfor %}
     <form method="post">
       {% csrf_token %}
 
